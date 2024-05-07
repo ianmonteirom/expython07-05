@@ -7,7 +7,7 @@ de uma vez na matriz, exiba todas as posições onde ele foi encontrado.
 
 from random import randint
 
-matriz, vezes, posicao, pos = [], [], [], []
+matriz, vezes, pos, matrizPosicao = [], [], [], []
 
 for i in range(5):
     linha = []
@@ -25,15 +25,12 @@ for i in range(len(matriz)):
 num = int(input('Número: '))
 
 for i in range(5):
-    posicao.append(pos)
+    pos = []
     for j in range(4):
-        pos = []
         if matriz[i][j] == num:
             vezes.append(matriz[i][j])
             pos.append(i)
             pos.append(j)
+            matrizPosicao.append(pos)
 
-
-
-
-print(f'O número {num} foi encontrado {len(vezes)} vezes, nas posições {pos}')
+print(f'O número {num} foi encontrado {len(vezes)} vezes, nas posições {matrizPosicao}')
